@@ -56,7 +56,8 @@ node {
             //SFDC_USERNAME=robj.result.username
             //robj = null
             def jsonSlurper = new JsonSlurper()
-            def inputText = '{"name" : "Groovy", "year": 2005}'
+            //def inputText = '{"name" : "Groovy", "year": 2005}'
+            def inputText = '{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}'
 
             def jsonObject = jsonSlurper.parseText(inputText)
             println "JSONObject generated out of JsonSlurper : " + jsonObject
