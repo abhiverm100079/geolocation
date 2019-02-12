@@ -61,6 +61,7 @@ node {
 
             def jsonObject = jsonSlurper.parseText(inputText)
             println "JSONObject generated out of JsonSlurper : " + jsonObject
+            println "Username -> [" + jsonObject.username + "]"
         
 
         }
