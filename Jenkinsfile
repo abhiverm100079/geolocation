@@ -45,12 +45,12 @@ node {
             //if (robj.status != 0) { error 'org creation failed: ' + robj.message }
             //SFDC_USERNAME=robj.result.username
             //robj = null
-            def jsonSlurper = new JsonSlurperClassic()
+            //def jsonSlurper = new JsonSlurperClassic()
             def rmsg = '{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}'
             print "Going to print rmsg Value"
             print rmsg
-            def robj = jsonSlurper.parseText(rmsg)
-            print "Checking if username could be parsed"
+            //def robj = jsonSlurper.parseText(rmsg)
+            //print "Checking if username could be parsed"
             //print robj.result.username
             //if (robj.status != 0) { error 'org creation failed: ' + robj.message }
             //SFDC_USERNAME=robj.result.username
