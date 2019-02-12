@@ -23,16 +23,17 @@ node {
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
         stage('Create Scratch Org') {
 
-            rc = bat returnStdout: true, script: "sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
-            //if (rc != 0) { error 'hub org authorization failed' }
-            print "Going to print STDOutput for rc"
-            //printf rc
-            print rc
+            rc = bat returnStatus: true, script: "sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
+            if (rc != 0) { error 'hub org authorization failed' }
+            else { print "Successfully Authorized..."}
             
 
             // need to pull out assigned username
             print "Going to Create Scratch ORG..."
             //rmsg = bat returnStdout: true, script: "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
+            String Stdoutrmsg = 'D:\Jenkins\workspace\MyDevOrg_mygit>sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername 
+{"status":0,"result":{"orgId":"00DO00000055yo2MAA","username":"test-vq37pe65hu6s@example.com"}}'
+            print "Printing Stdoutput for rmsg" + Stdoutrmsg
             //printf rmsg
             //print rmsg
             //print "Scratch Org Created Successfully"
