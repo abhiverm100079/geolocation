@@ -31,36 +31,13 @@ node {
             // need to pull out assigned username
             print "Going to Create Scratch ORG..."
             rmsg = bat returnStdout: true, script: "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
-            //printf rmsg
-            //print rmsg
-            //print "Scratch Org Created Successfully"
-            //def rmsg = '{"status":0,"result":{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}}'
-            //def rmsg = ["orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs"]
-            //String rmsg = "{}"
-            //print rmsg
-            //def jsonSlurper = new JsonSlurper()
-            //def robj = jsonSlurper.parseText(rmsg)
-            //if (robj.status != 0) { error 'org creation failed: ' + robj.message }
-            //SFDC_USERNAME=robj.result.username
-            //robj = null
-            //def jsonSlurper = new JsonSlurperClassic()
-            //def rmsg = '{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}'
             print "Going to print rmsg Value"
             print rmsg
-            //def robj = jsonSlurper.parseText(rmsg)
-            //print "Checking if username could be parsed"
-            //print robj.result.username
-            //if (robj.status != 0) { error 'org creation failed: ' + robj.message }
-            //SFDC_USERNAME=robj.result.username
-            //robj = null
             def jsonSlurper = new JsonSlurper()
-            //def inputText = '{"name" : "Groovy", "year": 2005}'
-            //def inputText = '{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}'
-
-            def jsonObject = jsonSlurper.parseText(rmsg)
-            println "JSONObject generated out of JsonSlurper : " + jsonObject
-            println "Username -> [" + jsonObject.result.username + "]"
-            SFDC_USERNAME=jsonObject.result.username
+            //def jsonObject = jsonSlurper.parseText(rmsg)
+            //println "JSONObject generated out of JsonSlurper : " + jsonObject
+            //println "Username -> [" + jsonObject.result.username + "]"
+            //SFDC_USERNAME=jsonObject.result.username
         
 
         }
