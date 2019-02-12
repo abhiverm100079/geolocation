@@ -51,10 +51,15 @@ node {
             print rmsg
             def robj = jsonSlurper.parseText(rmsg)
             print "Checking if username could be parsed"
-            print robj.result.username
-            if (robj.status != 0) { error 'org creation failed: ' + robj.message }
-            SFDC_USERNAME=robj.result.username
-            robj = null
+            //print robj.result.username
+            //if (robj.status != 0) { error 'org creation failed: ' + robj.message }
+            //SFDC_USERNAME=robj.result.username
+            //robj = null
+            def jsonSlurper = new JsonSlurper()
+            def inputText = '{"name" : "Groovy", "year": 2005}'
+
+            def jsonObject = jsonSlurper.parseText(inputText)
+            println "JSONObject generated out of JsonSlurper : " + jsonObject
         
 
         }
