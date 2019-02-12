@@ -25,11 +25,14 @@ node {
             if (rc != 0) { error 'hub org authorization failed' }
 
             // need to pull out assigned username
-            print "Going to Create Scratch ORG..."
-            rmsg = bat returnStdout: true, script: "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
+            //print "Going to Create Scratch ORG..."
+            //rmsg = bat returnStdout: true, script: "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
+            //printf rmsg
+            //print rmsg
+            //print "Scratch Org Created Successfully"
+            def rmsg = "{"status":0,"result":{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}}"
             printf rmsg
             print rmsg
-            print "Scratch Org Created Successfully"
             def jsonSlurper = new JsonSlurperClassic()
             def robj = jsonSlurper.parseText(rmsg)
             if (robj.status != 0) { error 'org creation failed: ' + robj.message }
