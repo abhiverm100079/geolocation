@@ -31,8 +31,8 @@ node {
             // need to pull out assigned username
             print "Going to Create Scratch ORG..."
             //rmsg = bat returnStdout: true, script: "sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername"
-            String Stdoutrmsg = 'D:\Jenkins\workspace\MyDevOrg_mygit>sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername 
-{"status":0,"result":{"orgId":"00DO00000055yo2MAA","username":"test-vq37pe65hu6s@example.com"}}'
+            String Stdoutrmsg = "D:\Jenkins\workspace\MyDevOrg_mygit>sfdx force:org:create --definitionfile config/project-scratch-def.json --json --setdefaultusername 
+{"status":0,"result":{"orgId":"00DO00000055yo2MAA","username":"test-vq37pe65hu6s@example.com"}}"
             print "Printing Stdoutput for rmsg" + Stdoutrmsg
             //printf rmsg
             //print rmsg
