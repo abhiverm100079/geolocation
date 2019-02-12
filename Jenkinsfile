@@ -1,4 +1,5 @@
 #!groovy
+package com.javacodegeeks.example.groovy.json;
 import groovy.json.JsonSlurperClassic
 import groovy.json.JsonSlurper
 node {
