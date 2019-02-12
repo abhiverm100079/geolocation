@@ -36,7 +36,7 @@ node {
             //printf rmsg
             //print rmsg
             //print "Scratch Org Created Successfully"
-            //def rmsg = "{"status":0,"result":{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}}"
+            def rmsg = '{"status":0,"result":{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}}'
             //def rmsg = ["orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs"]
             //String rmsg = "{}"
             //print rmsg
@@ -46,7 +46,7 @@ node {
             //SFDC_USERNAME=robj.result.username
             //robj = null
             //def jsonSlurper = new JsonSlurperClassic()
-            def rmsg = '{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}'
+            //def rmsg = '{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}'
             print "Going to print rmsg Value"
             print rmsg
             //def robj = jsonSlurper.parseText(rmsg)
@@ -57,9 +57,9 @@ node {
             //robj = null
             def jsonSlurper = new JsonSlurper()
             //def inputText = '{"name" : "Groovy", "year": 2005}'
-            def inputText = '{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}'
+            //def inputText = '{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}'
 
-            def jsonObject = jsonSlurper.parseText(inputText)
+            def jsonObject = jsonSlurper.parseText(rmsg)
             println "JSONObject generated out of JsonSlurper : " + jsonObject
             println "Username -> [" + jsonObject.username + "]"
         
