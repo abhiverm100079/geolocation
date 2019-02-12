@@ -35,7 +35,7 @@ node {
             //print rmsg
             //print "Scratch Org Created Successfully"
             //def rmsg = "{"status":0,"result":{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}}"
-            String AVrmsg = "{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs"}"
+            String rmsg = "{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs"}"
             print rmsg
             def jsonSlurper = new JsonSlurperClassic()
             def robj = jsonSlurper.parseText(rmsg)
