@@ -36,14 +36,29 @@ node {
             //print rmsg
             //print "Scratch Org Created Successfully"
             //def rmsg = "{"status":0,"result":{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}}"
-            def rmsg = ["orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs"]
+            //def rmsg = ["orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs"]
             //String rmsg = "{}"
-            print rmsg
+            //print rmsg
+            //def jsonSlurper = new JsonSlurper()
+            //def robj = jsonSlurper.parseText(rmsg)
+            //if (robj.status != 0) { error 'org creation failed: ' + robj.message }
+            //SFDC_USERNAME=robj.result.username
+            //robj = null
             def jsonSlurper = new JsonSlurper()
-            def robj = jsonSlurper.parseText(rmsg)
-            if (robj.status != 0) { error 'org creation failed: ' + robj.message }
-            SFDC_USERNAME=robj.result.username
-            robj = null
+            def inputText = '{"orgId":"00DO00000055yi9MAA","username":"test-div6bgju47fs@example.com"}'
+
+            def jsonObject = jsonSlurper.parseText(inputText)
+            println "JSONObject generated out of JsonSlurper : " + jsonObject
+
+            println "jsonObject is of type : " +  jsonObject.getClass()
+            println "jsonObject is a Map ? " + (jsonObject instanceof Map)
+            assert jsonObject instanceof Map
+
+            println ""
+            println "Individual Attributes"
+            println "====================="
+            println "Object.name -> [" + jsonObject.name + "]"
+            println "Object.year -> [" + jsonObject.year + "]"
 
         }
 
