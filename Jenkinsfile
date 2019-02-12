@@ -41,7 +41,7 @@ node {
                 error 'push failed'
             }
             // assign permset
-            rc = bat returnStatus: true, script: "sfdx force:user:permset:assign --targetusername ${SFDC_USERNAME} --permsetname DreamHouse"
+            rc = bat returnStatus: true, script: "sfdx force:user:permset:assign --targetusername ${SFDC_USERNAME} --permsetname Geolocation"
             if (rc != 0) {
                 error 'permset:assign failed'
             }
