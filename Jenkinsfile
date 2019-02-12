@@ -49,6 +49,8 @@ node {
             print "Going to print rmsg Value"
             print rmsg
             def robj = jsonSlurper.parseText(rmsg)
+            print "Checking if username could be parsed"
+            print robj.result.username
             if (robj.status != 0) { error 'org creation failed: ' + robj.message }
             SFDC_USERNAME=robj.result.username
             robj = null
